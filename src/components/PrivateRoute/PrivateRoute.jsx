@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
     const {user,loading} = use(AuthContext);
     //console.log(user)
     const location = useLocation();
-    console.log(location);
+    //console.log(location);
     if(loading){
         return <Loading></Loading>
 
@@ -16,9 +16,7 @@ const PrivateRoute = ({children}) => {
         return children;
     }
     return <Navigate state={location.pathname} to={"/auth/login"}></Navigate>
-    // if user thake return children
-   
-    // r jdi na thake taile navigate koira dibo login a
+    
 };
 
 export default PrivateRoute;
