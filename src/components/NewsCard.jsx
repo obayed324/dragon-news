@@ -1,5 +1,6 @@
 import { FaRegBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
 import moment from "moment";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
     const {
@@ -10,6 +11,7 @@ const NewsCard = ({ news }) => {
         total_view,
         rating,
         tags,
+        id,
     } = news;
 
     return (
@@ -54,9 +56,9 @@ const NewsCard = ({ news }) => {
                 {details.length > 200 ? (
                     <p>
                         {details.slice(0, 200)}...{" "}
-                        <span className="text-primary font-semibold cursor-pointer">
+                        <Link className="text-primary font-semibold cursor-pointer" to={`/news-details/${id}`}>
                             Read More
-                        </span>
+                        </Link>
                     </p>
                 ) : (
                     <p>{details}</p>
